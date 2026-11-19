@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conéctate en PartyPeak</title>
+<meta name="description" content="Tu pareja te invitó a conectarse en PartyPeak.">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#FFF8EC; --rose:#FFC4CF; --rose-deep:#E8738A; --ink:#5B4B50; --ink-soft:#8E7C82; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:'Nunito',system-ui,sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+  main { max-width:440px; margin:0 auto; padding:56px 16px; text-align:center; }
+  .logo { width:88px; height:88px; border-radius:50%; background:#fff; display:grid; place-items:center; margin:0 auto 16px; }
+  h1 { font-weight:800; font-size:1.8rem; margin:0 0 6px; }
+  p { color:var(--ink-soft); margin:0 0 20px; }
+  .code { background:var(--rose); border-radius:22px; padding:18px; font-size:2.2rem; font-weight:800; letter-spacing:.35em; margin:0 0 24px; }
+  .btn { display:block; background:var(--rose-deep); color:#fff; text-decoration:none; font-weight:800; padding:16px; border-radius:20px; box-shadow:0 5px 0 #c95a70; margin-bottom:14px; }
+  .btn.alt { background:#fff; color:var(--rose-deep); box-shadow:0 5px 0 var(--rose); }
+  small { color:var(--ink-soft); display:block; margin-top:18px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="logo" aria-hidden="true">
+    <svg width="44" height="44" viewBox="0 0 24 24" fill="#E8738A"><path d="M12 21s-7.5-4.6-9.5-9.1C1.1 8.6 3.2 5 6.6 5c2 0 3.4 1.1 4.4 2.5C12 6.1 13.4 5 15.4 5c3.4 0 5.5 3.6 4.1 6.9C19.5 16.4 12 21 12 21z"/></svg>
+  </div>
+  <h1>Te invitaron a PartyPeak</h1>
+  <p>Tu pareja quiere conectarse contigo.</p>
+  <div class="code" id="code">······</div>
+  <a class="btn" id="open" href="#">Abrir en PartyPeak</a>
+  <a class="btn alt" href="index.html">¿Aún no tienes la app?</a>
+  <small>Si no se abre, entra a PartyPeak y escribe este código en "Conectar con tu pareja".</small>
+</main>
+<script>
+  var code = (new URLSearchParams(location.search).get('code') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+  if (code) document.getElementById('code').textContent = code;
+  var deep = 'partypeak://pair?code=' + code;
+  var intent = 'intent://pair?code=' + code + '#Intent;scheme=partypeak;package=com.partypeak.app;end';
+  var isAndroid = /Android/i.test(navigator.userAgent);
+  var link = isAndroid ? intent : deep;
+  document.getElementById('open').href = link;
+  if (code && isAndroid) setTimeout(function () { location.href = link; }, 400);
+</script>
+</body>
+</html>
