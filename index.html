@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PartyPeak</title>
+<meta name="description" content="PartyPeak: su lugar para estar cerca, aunque estén lejos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#FFF8EC; --rose:#FFC4CF; --rose-deep:#E8738A; --mint:#D6F5D2; --sky:#DCEBF7; --ink:#5B4B50; --ink-soft:#8E7C82; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:'Nunito',system-ui,sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+  main { max-width:720px; margin:0 auto; padding:48px 16px 64px; }
+  .logo { width:96px; height:96px; border-radius:50%; background:#fff; display:grid; place-items:center; margin:0 auto 16px; box-shadow:0 6px 20px rgba(232,115,138,.15); }
+  h1 { text-align:center; font-size:2.6rem; font-weight:800; margin:0; }
+  .tag { text-align:center; color:var(--ink-soft); font-size:1.15rem; margin:4px 0 40px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; }
+  .card { background:#fff; border-radius:22px; padding:18px 20px; }
+  .card h2 { font-size:1.05rem; margin:0 0 4px; }
+  .card p { margin:0; color:var(--ink-soft); font-size:.95rem; }
+  .c1 { border-bottom:5px solid var(--rose); } .c2 { border-bottom:5px solid var(--mint); } .c3 { border-bottom:5px solid var(--sky); }
+  footer { text-align:center; margin-top:48px; color:var(--ink-soft); font-size:.9rem; }
+  a { color:var(--rose-deep); font-weight:700; }
+</style>
+</head>
+<body>
+<main>
+  <div class="logo" aria-hidden="true">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E8738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13M12 8S10 4 7.5 4 5 6.5 7 8M12 8s2-4 4.5-4S19 6.5 17 8"/></svg>
+  </div>
+  <h1>PartyPeak</h1>
+  <p class="tag">Su lugar para estar cerca, aunque estén lejos.</p>
+
+  <div class="grid">
+    <div class="card c1"><h2>Regalos con fecha</h2><p>Álbumes y cartas que se abren el día especial.</p></div>
+    <div class="card c2"><h2>Su plantita</h2><p>Riéguenla juntos cada día y mírenla crecer.</p></div>
+    <div class="card c3"><h2>Calendario</h2><p>Fotos ordenadas por fecha y planes con recordatorios.</p></div>
+    <div class="card c3"><h2>Te extraño</h2><p>Un toque para avisarle que piensas en ella o él.</p></div>
+    <div class="card c1"><h2>Preguntas</h2><p>Una pregunta al día, o las suyas propias.</p></div>
+    <div class="card c2"><h2>Grupos</h2><p>Regalos en conjunto con amigos o familia.</p></div>
+  </div>
+
+  <footer>
+    <p><a href="privacy.html">Política de privacidad</a> · <a href="terms.html">Condiciones del servicio</a></p>
+    <p>Contacto: <a href="mailto:anderbstz777@gmail.com">anderbstz777@gmail.com</a></p>
+  </footer>
+</main>
+</body>
+</html>
